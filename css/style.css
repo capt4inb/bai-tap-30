@@ -24,6 +24,14 @@ img{
   display: inline;
 }
 
+figcaption{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
 .btn:hover{
   width: 120px;
   height: 40px;
@@ -49,14 +57,20 @@ main button{
 
 .card{
   border-radius: 6px; /* ~ boder-rounded: md */
-  border: 1px solid rgb(169, 169, 169);
-  box-shadow: 2px 2px 0px 0px rgba(58, 58, 58, .4);
+  border: 2px solid rgb(169, 169, 169);
+  box-shadow: 1px 1px 0px 0px rgba(58, 58, 58, .4);
 }
 
 .card:hover{
   border-radius: 6px; /* ~ boder-rounded: md */
   border: 2px solid rgb(91 33 182);
-  box-shadow: 2px 2px 0px 0px rgba(58, 58, 58, .4);
+  box-shadow: 1px 1px 0px 0px rgba(58, 58, 58, .4);
+}
+
+.card:hover .price{
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4438ca;
 }
 
 .card:hover  button{
@@ -71,12 +85,32 @@ main button{
   border-radius: 6px; /* ~ boder-rounded: md */
   border: 2px solid rgb(91 33 182);
   transform: scale(1.1);
+  margin: 32px 32px;
 }
 
-.buy button{
+.card-focus #buy{
   width: calc(100% - 50px);
   height: 40px;
   border-radius: 6px; /* ~ boder-rounded: md */
   background-color:rgb(91 33 182);
   color: white;
+}
+
+.card-focus .price{
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4438ca;
+}
+
+.price{
+  font-size: 2rem;
+  font-weight: bold;
+  color: black;
+}
+
+#buy{
+  width: calc(100% - 50px);
+  height: 40px;
+  border-radius: 6px; /* ~ boder-rounded: md */
+  border: 1px solid rgb(169, 169, 169); 
 }

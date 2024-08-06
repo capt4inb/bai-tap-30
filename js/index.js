@@ -6,7 +6,6 @@ const buttonActive = document.querySelector('.btn-active');
 const card1 = document.querySelector('#card-1');
 const card2 = document.querySelector('#card-2');
 const card3 = document.querySelector('#card-3');
-const btnBuy = document.querySelector('#buy');
 // session
     buttonMonth.addEventListener('click', () => {
     buttonMonth.classList.add('btn-active');
@@ -34,6 +33,7 @@ card1.addEventListener('click', () => {
     card2.classList.add('card');
     card3.classList.remove('card-focus');
     card3.classList.add('card');
+    sessionStorage.setItem('activeCard', 'basic');
 });
 card2.addEventListener('click', () => {
     card2.classList.add('card-focus');
@@ -42,6 +42,7 @@ card2.addEventListener('click', () => {
     card1.classList.add('card');
     card3.classList.remove('card-focus');
     card3.classList.add('card');
+    sessionStorage.setItem('activeCard', 'standard');
 });
 card3.addEventListener('click', () => {
     card3.classList.add('card-focus');
@@ -50,7 +51,27 @@ card3.addEventListener('click', () => {
     card1.classList.add('card');
     card2.classList.remove('card-focus');
     card2.classList.add('card');
+    sessionStorage.setItem('activeCard', 'premium');
 });
-// tao class khi active co su thay doi va tao function onlick khi click vao button do thi class active dc them vao
-//  tao bien = class duoc active 
-//  set local cho bien vua tao 
+if (sessionStorage.getItem('activeCard') === 'basic') {
+    card1.classList.add('card-focus');
+    card1.classList.remove('card');
+    card2.classList.remove('card-focus');
+    card2.classList.add('card');
+    card3.classList.remove('card-focus');
+    card3.classList.add('card');
+}else if (sessionStorage.getItem('activeCard') === 'standard'){
+    card2.classList.add('card-focus');
+    card2.classList.remove('card');
+    card1.classList.remove('card-focus');
+    card1.classList.add('card');
+    card3.classList.remove('card-focus');
+    card3.classList.add('card');
+}else if(sessionStorage.getItem('activeCard') === 'premium'){
+    card3.classList.add('card-focus');
+    card3.classList.remove('card');
+    card1.classList.remove('card-focus');
+    card1.classList.add('card');
+    card2.classList.remove('card-focus');
+    card2.classList.add('card');
+}
